@@ -1,0 +1,41 @@
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; */
+
+h1{
+   text-align: center;
+   font-family:'Press Start 2P', cursive;
+   font-size:30px;
+   color: orange;
+   
+}
+
+h2{
+   text-align: center;
+   font-family:'Press Start 2P', cursive;
+   font-size: small;
+}
+
+body{
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center bottom;
+   background-color: #efefef;
+   background-size:  80% 50%;
+}
+
+button{
+   background-color: orange;
+   font-family:'Press Start 2P', cursive;
+   font-size: 12px;
+}
+
+input{
+   border: 2px solid orange;
+   border-radius: 4px;
+}
+
+ul{
+   font-family:'Press Start 2P', cursive;
+}
