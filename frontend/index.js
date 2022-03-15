@@ -14,7 +14,7 @@ addSymbolButton.addEventListener('click', () => {
     document.getElementById('name'). innerHTML = completedata[0].company_name;
     document.getElementById('root').innerHTML=
     ("Environmental | Grade: " + completedata[0].environment_grade + " | Level: "+ completedata[0].environment_level + " | Score: "+ completedata[0].environment_score + "<br>" + "<br>" +
-    "Social | Grade: " + completedata[0].social_grade + " | Level: "+ completedata[0].social_level + " | Score: "+ completedata[0].social_score + "<br>" + "<br>" +
+    "Social  | Grade: " + completedata[0].social_grade + " | Level: "+ completedata[0].social_level + " | Score: "+ completedata[0].social_score + "<br>" + "<br>" +
     "Governance | Grade: " + completedata[0].governance_grade + " | Level: "+ completedata[0].governance_level + " | Score: "+ completedata[0].governance_score
     );
 

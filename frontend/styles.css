@@ -48,8 +48,7 @@ ul{
 #name {
    font-size: medium;
    text-decoration: underline;
-   border-style: solid;
-   border-color: orange;
+   border: solid orange;
    border-radius: 6px;
-   background-color: orange;
+   background: orange;
 }
