@@ -44,3 +44,12 @@ ul{
    font-family:'Press Start 2P', cursive;
    font-size: x-small;
 }
+
+#name {
+   font-size: medium;
+   text-decoration: underline;
+   border-style: solid;
+   border-color: orange;
+   border-radius: 6px;
+   background-color: orange;
+}
