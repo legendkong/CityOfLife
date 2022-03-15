@@ -5,16 +5,21 @@ const sharesInput = document.getElementById('shares-input');
 const symbolList = document.getElementById('symbol-list');
 const symbols = [];
 
-////Fetch request from ESG API
-// addSymbolButton.addEventListener('click', () => {
-//     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
-//     return data.json();
-// }).then((completedata)=>{
-//     console.log(completedata[0].environment_grade);
-//     document.getElementById('root').innerHTML=completedata[0].environment_grade;
-// }).catch((err)=>{
-//     console.log(err);
-// })});
+//Fetch request from ESG API
+addSymbolButton.addEventListener('click', () => {
+    fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
+    return data.json();
+}).then((completedata)=>{
+    //console.log(completedata[0].environment_grade);
+    document.getElementById('root').innerHTML=
+    ("Environmental | Grade: " + completedata[0].environment_grade + " | Level: "+ completedata[0].environment_level + " | Score: "+ completedata[0].environment_score + "<br>" +
+    "Social | Grade: " + completedata[0].social_grade + " | Level: "+ completedata[0].social_level + " | Score: "+ completedata[0].social_score + "<br>" +
+    "Governance | Grade: " + completedata[0].governance_grade + " | Level: "+ completedata[0].governance_level + " | Score: "+ completedata[0].governance_score
+    );
+
+}).catch((err)=>{
+    console.log(err);
+})});
 
 //config is for chart.js, initialised type as doughnut chart
 const config = {
