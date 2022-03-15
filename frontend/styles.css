@@ -39,3 +39,8 @@ input{
 ul{
    font-family:'Press Start 2P', cursive;
 }
+
+#root {
+   font-family:'Press Start 2P', cursive;
+   font-size: x-small;
+}
