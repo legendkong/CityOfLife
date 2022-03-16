@@ -5,6 +5,23 @@ const sharesInput = document.getElementById('shares-input');
 const symbolList = document.getElementById('symbol-list');
 const symbols = [];
 
+
+// function showImage() {
+//     image = document.createElement('image');
+//     document.body.appendChild(image)
+//     image.innerHTML = `<img src=https://logo.clearbit.com/${symbolInput.value}.com></img>`;
+// }
+
+// addSymbolButton.addEventListener('click', () => {
+//    $('img[data-default-src]').each(function(){
+//    var defaultSrc = $(this).data('default-src');
+//    $(this).on('error', function(){
+//      $(this).attr({src: defaultSrc}); 
+//    });
+// });
+// });
+    
+
 //Fetch request from ESG API
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
@@ -12,11 +29,16 @@ addSymbolButton.addEventListener('click', () => {
 }).then((completedata)=>{
     //console.log(completedata[0].environment_grade);
     document.getElementById('name'). innerHTML = completedata[0].company_name;
-    document.getElementById('root').innerHTML=
-    ("Environmental | Grade: " + completedata[0].environment_grade + " | Level: "+ completedata[0].environment_level + " | Score: "+ completedata[0].environment_score + "<br>" + "<br>" +
-    "Social  | Grade: " + completedata[0].social_grade + " | Level: "+ completedata[0].social_level + " | Score: "+ completedata[0].social_score + "<br>" + "<br>" +
-    "Governance | Grade: " + completedata[0].governance_grade + " | Level: "+ completedata[0].governance_level + " | Score: "+ completedata[0].governance_score
-    );
+
+    //Environmental
+    document.getElementById('env').innerHTML=
+    "Grade: " + completedata[0].environment_grade + "<br>" + "Level: "+ completedata[0].environment_level + "<br>" + "Score: "+ completedata[0].environment_score;
+
+    //Social
+    document.getElementById('soc').innerHTML = "Grade: " + completedata[0].social_grade + "<br>" + "Level: "+ completedata[0].social_level + "<br>" + "Score: "+ completedata[0].social_score;
+
+    //Governance
+    document.getElementById('gov').innerHTML = "Grade: " + completedata[0].governance_grade + "<br>" + "Level: "+ completedata[0].governance_level + "<br>" + "Score: "+ completedata[0].governance_score;
 
 }).catch((err)=>{
     console.log(err);

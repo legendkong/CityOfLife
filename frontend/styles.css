@@ -45,6 +45,11 @@ ul{
    font-size: x-small;
 }
 
+p {
+   font-family: 'Sora', sans-serif;
+   font-weight:bold;
+}
+
 #name {
    font-size: medium;
    text-decoration: underline;
