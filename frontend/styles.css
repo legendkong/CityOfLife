@@ -119,5 +119,10 @@ ul{
    .grid > article{
       text-align: center;
    }
+}
 
+img{
+   width:150px;
+   height:150px;
+   object-fit: scale-down;
 }
