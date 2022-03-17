@@ -12,21 +12,23 @@ const symbols = [];
 //     image.innerHTML = `<img src=https://logo.clearbit.com/${symbolInput.value}.com></img>`;
 // }
 
-// addSymbolButton.addEventListener('click', () => {
-//    $('img[data-default-src]').each(function(){
-//    var defaultSrc = $(this).data('default-src');
-//    $(this).on('error', function(){
-//      $(this).attr({src: defaultSrc}); 
-//    });
-// });
-// });
-    
+// var img = document.createElement("img");
+// img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
+// var src = document.getElementById("image");
+// src.appendChild(img);
+
 
 //Fetch request from ESG API
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
 }).then((completedata)=>{
+
+    var img = document.createElement("img");
+    img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
+    var src = document.getElementById("image");
+    src.appendChild(img);
+
     //console.log(completedata[0].environment_grade);
     document.getElementById('name'). innerHTML = completedata[0].company_name;
 

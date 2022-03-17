@@ -131,3 +131,10 @@ img{
    height:150px;
    object-fit: scale-down;
 }
+
+#name {
+   padding-bottom: 0px;
+   margin-bottom: 0px;
+   font-size: larger;
+}
+
