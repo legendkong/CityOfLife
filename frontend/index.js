@@ -17,6 +17,11 @@ const symbols = [];
 // var src = document.getElementById("image");
 // src.appendChild(img);
 
+function showDiv() {
+   document.getElementById('bodypf').style.display = "block";
+}
+
+
 addSymbolButton.addEventListener('click', () =>  {
     var img = document.createElement("img");
     img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
