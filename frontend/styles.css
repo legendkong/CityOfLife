@@ -8,7 +8,6 @@ h1{
    font-family:'Press Start 2P', cursive;
    font-size:30px;
    color: orange;
-   
 }
 
 h2{
@@ -23,6 +22,7 @@ body{
    background-position: center bottom;
    background-color: #efefef;
    background-size:  80% 50%;
+   /* background-size: contain; */
 }
 
 button{
@@ -64,6 +64,8 @@ p {
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 10px;
    align-items:center;
+   margin-bottom: 0px;
+   margin-top: 10px;
 }
 
 .grid > article{
@@ -148,5 +150,6 @@ img{
    width: 770px;
    height: 300px;
    transition: transform .3s;
+   margin-bottom: 0px;
 
 }
