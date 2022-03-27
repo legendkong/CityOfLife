@@ -139,12 +139,14 @@ img{
 }
 
 #bodypf {
+   position: relative;
    background: white;
    border: none;
    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
    border-radius: 20px;
    text-align: left;
    width: 770px;
-   height: 400px;
+   height: 300px;
    transition: transform .3s;
+
 }
