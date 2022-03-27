@@ -64,7 +64,7 @@ p {
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 10px;
    align-items:center;
-   margin-bottom: 0px;
+   margin-bottom: 15px;
    margin-top: 10px;
 }
 
@@ -152,4 +152,11 @@ img{
    height: 300px;
    transition: transform .3s;
    margin-bottom: 0px;
+}
+
+#totalpf{
+   text-align: center;
+   font-family:'Press Start 2P', cursive;
+   font-size: large;
+   color: orange;
 }
