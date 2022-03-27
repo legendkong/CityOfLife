@@ -134,6 +134,7 @@ img{
    object-fit: scale-down;
 }
 
+
 #name {
    padding-bottom: 0px;
    margin-bottom: 0px;
@@ -151,5 +152,4 @@ img{
    height: 300px;
    transition: transform .3s;
    margin-bottom: 0px;
-
 }
