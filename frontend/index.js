@@ -4,6 +4,15 @@ const symbolInput = document.getElementById('symbol-input');
 const sharesInput = document.getElementById('shares-input');
 const symbolList = document.getElementById('symbol-list');
 const symbols = [];
+const openE = document.getElementById('openE');
+const openS = document.getElementById('openS');
+const openG = document.getElementById('openG');
+const modal_containerE = document.getElementById('modal_containerE');
+const modal_containerS = document.getElementById('modal_containerS');
+const modal_containerG = document.getElementById('modal_containerG');
+const closeE = document.getElementById('closeE');
+const closeS = document.getElementById('closeS');
+const closeG = document.getElementById('closeG');
 
 
 // function showImage() {
@@ -18,7 +27,7 @@ const symbols = [];
 // src.appendChild(img);
 
 function showDiv() {
-   document.getElementById('bodypf').style.display = "block";
+    document.getElementById('bodypf').style.display = "block";
 }
 
 
@@ -41,7 +50,7 @@ addSymbolButton.addEventListener('click', () =>  {
 
 
 
-//Fetch request for SDG data
+//Fetch request from SDG data API
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/goals?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
@@ -51,22 +60,9 @@ addSymbolButton.addEventListener('click', () => {
     document.getElementById('goals').innerHTML=
     "Goal 1: " + completedata[0].goals[0].sdg + "<br>" + "Goal 2: "+ completedata[0].goals[1].sdg + "<br>" + "Goal 3: "+ completedata[0].goals[2].sdg + "<br>" + "Goal 4: "+ completedata[0].goals[3].sdg + "<br>" + "Goal 5: "+ completedata[0].goals[4].sdg;
 
-    //Social
-    // document.getElementById('soc').innerHTML = "Grade: " + completedata[0].social_grade + "<br>" + "Level: "+ completedata[0].social_level + "<br>" + "Score: "+ completedata[0].social_score;
-
 }).catch((err)=>{
     console.log(err);
 })});
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -92,6 +88,30 @@ addSymbolButton.addEventListener('click', () => {
 }).catch((err)=>{
     console.log(err);
 })});
+
+
+//Show modal pop-up
+openE.addEventListener('click', () => {
+    modal_containerE.classList.add('show');
+});
+openS.addEventListener('click', () => {
+    modal_containerS.classList.add('show');
+});
+openG.addEventListener('click', () => {
+    modal_containerG.classList.add('show');
+});
+
+// Modal close button
+closeE.addEventListener('click', () => {
+    modal_containerE.classList.remove('show');
+});
+closeS.addEventListener('click', () => {
+    modal_containerS.classList.remove('show');
+});
+closeG.addEventListener('click', () => {
+    modal_containerG.classList.remove('show');
+});
+
 
 //config is for chart.js, initialised type as doughnut chart
 const config = {
