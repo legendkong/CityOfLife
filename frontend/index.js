@@ -29,8 +29,8 @@ addSymbolButton.addEventListener('click', () =>  {
     src.appendChild(img); //Adds one element to the node
 
     //If don't want images to stack:
-    // document.getElementById("image").innerHTML = ""; // Clears the image div, so that the images wont stack 
-    // document.getElementById("image").appendChild(img);
+    document.getElementById("image").innerHTML = ""; // Clears the image div, so that the images wont stack 
+    document.getElementById("image").appendChild(img);
 });
 
 
