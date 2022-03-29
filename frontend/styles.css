@@ -299,5 +299,13 @@ a{
 }
 
 .column {
-  flex: 33.33%;
+   flex: 33.33%;
+   font-family: 'Sora', sans-serif;
+   font-weight:bolder;
+}
+
+.modalUL {
+   font-family: 'Sora', sans-serif;
+   font-weight: 500;
+   text-align: left;
 }
