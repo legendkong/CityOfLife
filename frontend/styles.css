@@ -215,12 +215,10 @@ img{
 }
 
 a{
-   
    color: green;
    font-family:'Press Start 2P', cursive;
    border-radius: 5px;
    font-size: medium;
-   
 }
 
 #sdglogo{
@@ -243,9 +241,17 @@ a{
    left: 0;
    height: 100vh;
    width: 100vw;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 0.5s ease;
 }
 
-.modal{
+.modal-container.show {
+   pointer-events: auto;
+   opacity: 1;
+}
+
+.modalE{
    background-color: #fff;
    padding: 30px 50px;
    border-radius: 20px;
@@ -253,4 +259,28 @@ a{
    width: 600px;
    max-width: 100%;
    text-align: center;
+}
+
+.modalS{
+   background-color: #fff;
+   padding: 30px 50px;
+   border-radius: 20px;
+   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+   width: 600px;
+   max-width: 100%;
+   text-align: center;
+}
+
+.modalG{
+   background-color: #fff;
+   padding: 30px 50px;
+   border-radius: 20px;
+   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+   width: 600px;
+   max-width: 100%;
+   text-align: center;
+}
+
+.modal h1 {
+   margin: 0;
 }
