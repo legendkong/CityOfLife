@@ -326,3 +326,15 @@ a{
 #closeE:hover, #closeS:hover, #closeG:hover{
    transform: translateY(5px);
 }
+
+.pfrating{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 100%;
+}
+
+.pfdescription{
+   flex: 33.333%;
+}
+
