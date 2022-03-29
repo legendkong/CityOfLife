@@ -213,3 +213,23 @@ img{
   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
   border-radius: 20px;
 }
+
+a{
+   
+   color: green;
+   font-family:'Press Start 2P', cursive;
+   border-radius: 5px;
+   font-size: medium;
+   
+}
+
+#sdglogo{
+   width:150px;
+   height:50px;
+   object-fit:scale-down;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   background-color: aliceblue;
+   border-radius: 10px;
+   
+}

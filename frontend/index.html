@@ -14,11 +14,13 @@
 
 </head>
    <body id="bg" background="isometric-city.png">
+      <!-- Title -->
       <h1>City of Life</h1>
       <h2>Portfolio tracker</h2>
 </head>
 
 <body>
+   <!-- Add stock portion -->
    <div style="padding: 16px; display: flex; flex-direction: column; align-items: center">
       <div>
          <input placeholder="symbol" id="symbol-input">
@@ -26,16 +28,9 @@
          <button id="add-symbol-button" onclick="showDiv()">add</button>
       </div>
 
-      <!-- <div>
-         <ul id="symbol-list">
-         </ul>
-         <h2 id="name">
-         </h2>
-         <h2 id="image"></h2>
-      </div> -->
+      <!-- SDG Goals portion -->
       <ul id="symbol-list">
       </ul>
-      
       <div class="flip-card">
          <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -47,30 +42,16 @@
                   </div>
                   <div class="flip-card-back">
                      <p id="goals"></p>
-                     <a href="https://sdgs.un.org/goals" target="_blank">THE 17 GOALS</a>
+                     <a href="https://sdgs.un.org/goals" target="_blank"><img id="sdglogo" src="SDG_UN_LOGO.png" alt=""></a>
             </div>
          </div>
       </div>
-      
 
-
-
-      <!-- Display ESG data of company --> 
-      <!-- <div id="bodypf" style="display:none;" class="answer_list"> 
-         <h2 id="name">
-         </h2>
-         <div id="image"></div>
-         <div style="position: absolute; top:55px; right: 45px; width:200px; height:200px;">
-            <canvas id="chart"></canvas>
-         </div>
-      </div> -->
-
-
-
-
-
+      <!-- ESG output portion -->
       <div id="cards" class="container">
          <main class="grid">
+
+            <!-- Environment card -->
             <article>
                <img src="pixel_tree1.png" alt="">
                <div class ="text">
@@ -80,6 +61,7 @@
                </div>
             </article>
 
+            <!-- Social card -->
             <article>
                <img src="pixel_handshake.png" alt="">
                <div class="text">
@@ -89,6 +71,7 @@
                </div>
             </article>
 
+            <!-- Governance card -->
             <article>
                <img src="pixel_governance.png" alt="">
                <div class="text">
@@ -100,17 +83,14 @@
          </main>
       </div>
 
-      <!-- Display ESG data of company -->
+      <!-- Total portfolio ratings portion -->
       <div id="bodypf" style="display:none;" class="answer_list">
          <h3 id="totalpf">Portfolio Ratings</h3>
+         <!-- Chart.js chart -->
          <div style="position: absolute; top:55px; right: 45px; width:200px; height:200px;">
             <canvas id="chart"></canvas>
          </div>
       </div>
-
-      <!-- <div style="margin-top: 32px;">
-         <canvas id="chart"></canvas>
-      </div> -->
    </div>
 
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
