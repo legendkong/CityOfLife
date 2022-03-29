@@ -34,6 +34,42 @@ addSymbolButton.addEventListener('click', () =>  {
 });
 
 
+
+
+
+
+
+
+
+//Fetch request for SDG data
+addSymbolButton.addEventListener('click', () => {
+    fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/goals?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
+    return data.json();
+}).then((completedata)=>{
+
+    //SDG goals
+    document.getElementById('goals').innerHTML=
+    "Goal 1: " + completedata[0].goals[0].sdg + "<br>" + "Goal 2: "+ completedata[0].goals[1].sdg + "<br>" + "Goal 3: "+ completedata[0].goals[2].sdg + "<br>" + "Goal 4: "+ completedata[0].goals[3].sdg + "<br>" + "Goal 5: "+ completedata[0].goals[4].sdg;
+
+    //Social
+    // document.getElementById('soc').innerHTML = "Grade: " + completedata[0].social_grade + "<br>" + "Level: "+ completedata[0].social_level + "<br>" + "Score: "+ completedata[0].social_score;
+
+}).catch((err)=>{
+    console.log(err);
+})});
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Fetch request from ESG API
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
