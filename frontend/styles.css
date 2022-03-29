@@ -322,3 +322,7 @@ a{
    border-radius: 20px;
    cursor: pointer;
 }
+
+#closeE:hover, #closeS:hover, #closeG:hover{
+   transform: translateY(5px);
+}
