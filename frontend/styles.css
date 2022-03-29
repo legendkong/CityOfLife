@@ -304,6 +304,12 @@ a{
    font-weight:bolder;
 }
 
+.column1 {
+   flex: 30%;
+   font-family: 'Sora', sans-serif;
+   font-weight:bolder;
+}
+
 .modalUL {
    font-family: 'Sora', sans-serif;
    font-weight: 500;
