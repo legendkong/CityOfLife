@@ -18,6 +18,7 @@ var social = [];
 var governance = [];
 
 
+
 // function showImage() {
 //     image = document.createElement('image');
 //     document.body.appendChild(image)
@@ -88,24 +89,42 @@ addSymbolButton.addEventListener('click', () => {
     //Governance
     document.getElementById('gov').innerHTML = "Grade: " + completedata[0].governance_grade + "<br>" + "Level: "+ completedata[0].governance_level + "<br>" + "Score: "+ completedata[0].governance_score;
 
+    //Initializing sum of E,S,G variables
+    let sumEnv = 0;
+    let sumSoc = 0;
+    let sumGov = 0; 
+
     //Storing [i] Environmental score into an array
     environment.push(completedata[0].environment_score);
+    for(let i = 0 ; i < environment.length; i++){
+    sumEnv += environment[i];
+    }   
+    console.log(sumEnv);
     console.log('Environment', environment)
 
     //Storing [i] Social score into an array
     social.push(completedata[0].social_score);
+    for(let i = 0 ; i < social.length; i++){
+    sumSoc += social[i];
+    }  
+    console.log(sumSoc);
     console.log('Social', social)
 
     //Storing [i] Governance score into an array
     governance.push(completedata[0].governance_score);
+    for(let i = 0 ; i < governance.length; i++){
+    sumGov += governance[i];
+    }  
+    console.log(sumGov);
     console.log('Governance', governance)
 
-
+    document.getElementById('totalenv').innerHTML = "Total Environmental Score : " + sumEnv;
+    document.getElementById('totalsoc').innerHTML = "Total Social Score : " + social;
+    document.getElementById('totalgov').innerHTML = "Total Governance Score : " + governance;
 
 }).catch((err)=>{
     console.log(err);
 })});
-
 
 //Show modal pop-up
 openE.addEventListener('click', () => {
