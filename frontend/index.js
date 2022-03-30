@@ -99,27 +99,27 @@ addSymbolButton.addEventListener('click', () => {
     for(let i = 0 ; i < environment.length; i++){
     sumEnv += environment[i];
     }   
-    console.log(sumEnv);
-    console.log('Environment', environment)
-    document.getElementById('totalenv').innerHTML = "Total Environmental Score : " + sumEnv;
+    // console.log(sumEnv);
+    // console.log('Environment', environment);
+    document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
 
     //Storing [i] Social score into an array
     social.push(completedata[0].social_score);
     for(let i = 0 ; i < social.length; i++){
     sumSoc += social[i];
     }  
-    console.log(sumSoc);
-    console.log('Social', social)
-    document.getElementById('totalsoc').innerHTML = "Total Social Score : " + sumSoc;
+    // console.log(sumSoc);
+    // console.log('Social', social)
+    document.getElementById('totalSoc').innerHTML = "Total Social Score : " + sumSoc;
 
     //Storing [i] Governance score into an array
     governance.push(completedata[0].governance_score);
     for(let i = 0 ; i < governance.length; i++){
     sumGov += governance[i];
     }  
-    console.log(sumGov);
-    console.log('Governance', governance)
-    document.getElementById('totalgov').innerHTML = "Total Governance Score : " + sumGov;
+    // console.log(sumGov);
+    // console.log('Governance', governance)
+    document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
 
 }).catch((err)=>{
     console.log(err);
