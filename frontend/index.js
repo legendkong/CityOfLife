@@ -101,6 +101,7 @@ addSymbolButton.addEventListener('click', () => {
     }   
     console.log(sumEnv);
     console.log('Environment', environment)
+    document.getElementById('totalenv').innerHTML = "Total Environmental Score : " + sumEnv;
 
     //Storing [i] Social score into an array
     social.push(completedata[0].social_score);
@@ -109,6 +110,7 @@ addSymbolButton.addEventListener('click', () => {
     }  
     console.log(sumSoc);
     console.log('Social', social)
+    document.getElementById('totalsoc').innerHTML = "Total Social Score : " + sumSoc;
 
     //Storing [i] Governance score into an array
     governance.push(completedata[0].governance_score);
@@ -117,10 +119,7 @@ addSymbolButton.addEventListener('click', () => {
     }  
     console.log(sumGov);
     console.log('Governance', governance)
-
-    document.getElementById('totalenv').innerHTML = "Total Environmental Score : " + sumEnv;
-    document.getElementById('totalsoc').innerHTML = "Total Social Score : " + social;
-    document.getElementById('totalgov').innerHTML = "Total Governance Score : " + governance;
+    document.getElementById('totalgov').innerHTML = "Total Governance Score : " + sumGov;
 
 }).catch((err)=>{
     console.log(err);
