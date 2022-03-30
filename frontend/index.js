@@ -13,6 +13,9 @@ const modal_containerG = document.getElementById('modal_containerG');
 const closeE = document.getElementById('closeE');
 const closeS = document.getElementById('closeS');
 const closeG = document.getElementById('closeG');
+var environment = [];
+var social = [];
+var governance = [];
 
 
 // function showImage() {
@@ -84,6 +87,20 @@ addSymbolButton.addEventListener('click', () => {
 
     //Governance
     document.getElementById('gov').innerHTML = "Grade: " + completedata[0].governance_grade + "<br>" + "Level: "+ completedata[0].governance_level + "<br>" + "Score: "+ completedata[0].governance_score;
+
+    //Storing [i] Environmental score into an array
+    environment.push(completedata[0].environment_score);
+    console.log('Environment', environment)
+
+    //Storing [i] Social score into an array
+    social.push(completedata[0].social_score);
+    console.log('Social', social)
+
+    //Storing [i] Governance score into an array
+    governance.push(completedata[0].governance_score);
+    console.log('Governance', governance)
+
+
 
 }).catch((err)=>{
     console.log(err);
