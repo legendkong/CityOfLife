@@ -149,7 +149,8 @@ addSymbolButton.addEventListener('click', () => {
     }
 }
 //Healthbar object
-new HealthBar(document.querySelector('.health-bar'), totalSum);
+const hb = new HealthBar(document.querySelector('.health-bar'), totalSum);
+hb.setValue(totalSum);
     
 }).catch((err)=>{
     console.log(err);
