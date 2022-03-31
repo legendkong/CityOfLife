@@ -19,6 +19,7 @@ var governance = [];
 
 
 
+
 // function showImage() {
 //     image = document.createElement('image');
 //     document.body.appendChild(image)
@@ -76,7 +77,6 @@ addSymbolButton.addEventListener('click', () => {
     return data.json();
 }).then((completedata)=>{
 
-    //console.log(completedata[0].environment_grade);
     document.getElementById('name'). innerHTML = completedata[0].company_name;
 
     //Environmental
@@ -99,6 +99,7 @@ addSymbolButton.addEventListener('click', () => {
     for(let i = 0 ; i < environment.length; i++){
     sumEnv += environment[i];
     }  
+    
     //To get average Environment score
     sumEnv = sumEnv/(environment.length); 
     document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
@@ -121,6 +122,41 @@ addSymbolButton.addEventListener('click', () => {
     sumGov = sumGov/(governance.length);
     document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
 
+    //To get healthbar %
+    totalSum = sumEnv + sumSoc + sumGov;
+    totalSum = totalSum/10;
+    totalSum = Math.round(totalSum * 10) / 10;
+
+    //Creating healthbar
+    class HealthBar {
+    constructor (element, initialValue = 0) {
+        this.valueElem = element.querySelector('.health-bar-value');
+        this.fillElem = element.querySelector('.health-bar-fill');
+        this.setValue(initialValue);
+    }
+
+    setValue(newValue){
+        //Min 0%
+        if(newValue < 0) {
+            newValue = 0;
+        }
+        //Max 100%
+        if(newValue > 100){
+            newValue = 100;
+        }
+        this.value = newValue;
+        this.update();
+    }
+
+    update(){
+        const percentage = this.value + '%'; 
+        this.fillElem.style.width = percentage;
+        this.valueElem.textContent = percentage;
+    }
+}
+//Healthbar object
+new HealthBar(document.querySelector('.health-bar'), totalSum);
+    
 }).catch((err)=>{
     console.log(err);
 })});
@@ -218,3 +254,32 @@ function getRandomColor() {
 function round(value) {
     return Math.round(value * 100) / 100;
 }
+
+// class HealthBar {
+//     constructor (element, initialValue = 0) {
+//         this.valueElem = element.querySelector('.health-bar-value');
+//         this.fillElem = element.querySelector('.health-bar-fill');
+        
+//         this.setValue(initialValue);
+//     }
+
+//     setValue(newValue){
+//         if(newValue < 0) {
+//             newValue = 0;
+//         }
+//         if(newValue > 100){
+//             newValue = 100;
+//         }
+//         this.value = newValue;
+//         this.update();
+//     }
+
+//     update(){
+//         const percentage = this.value + '%'; 
+//         this.fillElem.style.width = percentage;
+//         this.valueElem.textContent = percentage;
+//     }
+// }
+
+// console.log(hb);
+// new HealthBar(document.querySelector('.health-bar'), 5);
