@@ -165,53 +165,52 @@ img{
 }
 
 .flip-card {
-  background-color: transparent;
-  width: 770px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+   background-color: transparent;
+   width: 770px;
+   height: 200px;
+   border: 1px solid #f1f1f1;
+   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+   position: relative;
+   width: 100%;
+   height: 100%;  
+   text-align: center;
+   transition: transform 0.8s;
+   transform-style: preserve-3d;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+   transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
-  border-radius: 20px;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+   border-radius: 20px;
   -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+   backface-visibility: hidden;
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: white;
-  color: black;
+   background-color: white;
+   color: black;
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: white;
-  color: orange;
-  transform: rotateY(180deg);
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
-  border-radius: 20px;
+   background-color: white;
+   color: orange;
+   transform: rotateY(180deg);
+   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+   border-radius: 20px;
 }
 
 a{
@@ -334,5 +333,8 @@ a{
    width: 100%;
 }
 
-
+#pfdescription {
+   padding-left: 40px;
+   padding-top: 20px;
+}
 
