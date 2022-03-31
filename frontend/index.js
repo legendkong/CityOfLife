@@ -49,12 +49,6 @@ addSymbolButton.addEventListener('click', () =>  {
 
 
 
-
-
-
-
-
-
 //Fetch request from SDG data API
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/goals?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
@@ -92,14 +86,14 @@ addSymbolButton.addEventListener('click', () => {
     //Initializing sum of E,S,G variables
     let sumEnv = 0;
     let sumSoc = 0;
-    let sumGov = 0; 
+    let sumGov = 0;
 
     //Storing [i] Environmental score into an array
     environment.push(completedata[0].environment_score);
     for(let i = 0 ; i < environment.length; i++){
     sumEnv += environment[i];
     }  
-    
+
     //To get average Environment score
     sumEnv = sumEnv/(environment.length); 
     document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
@@ -172,7 +166,7 @@ openG.addEventListener('click', () => {
     modal_containerG.classList.add('show');
 });
 
-// Modal close button
+//Modal close button
 closeE.addEventListener('click', () => {
     modal_containerE.classList.remove('show');
 });
@@ -182,7 +176,6 @@ closeS.addEventListener('click', () => {
 closeG.addEventListener('click', () => {
     modal_containerG.classList.remove('show');
 });
-
 
 //config is for chart.js, initialised type as doughnut chart
 const config = {
@@ -255,31 +248,3 @@ function round(value) {
     return Math.round(value * 100) / 100;
 }
 
-// class HealthBar {
-//     constructor (element, initialValue = 0) {
-//         this.valueElem = element.querySelector('.health-bar-value');
-//         this.fillElem = element.querySelector('.health-bar-fill');
-        
-//         this.setValue(initialValue);
-//     }
-
-//     setValue(newValue){
-//         if(newValue < 0) {
-//             newValue = 0;
-//         }
-//         if(newValue > 100){
-//             newValue = 100;
-//         }
-//         this.value = newValue;
-//         this.update();
-//     }
-
-//     update(){
-//         const percentage = this.value + '%'; 
-//         this.fillElem.style.width = percentage;
-//         this.valueElem.textContent = percentage;
-//     }
-// }
-
-// console.log(hb);
-// new HealthBar(document.querySelector('.health-bar'), 5);
