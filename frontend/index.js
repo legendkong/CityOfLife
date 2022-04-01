@@ -7,12 +7,15 @@ const symbols = [];
 const openE = document.getElementById('openE');
 const openS = document.getElementById('openS');
 const openG = document.getElementById('openG');
+const openOverall = document.getElementById('openOverall');
 const modal_containerE = document.getElementById('modal_containerE');
 const modal_containerS = document.getElementById('modal_containerS');
 const modal_containerG = document.getElementById('modal_containerG');
+const modal_containerOverall = document.getElementById('modal_containerOverall');
 const closeE = document.getElementById('closeE');
 const closeS = document.getElementById('closeS');
 const closeG = document.getElementById('closeG');
+const closeOverall = document.getElementById('closeOverall');
 var environment = [];
 var social = [];
 var governance = [];
@@ -96,6 +99,7 @@ addSymbolButton.addEventListener('click', () => {
 
     //To get average Environment score
     sumEnv = sumEnv/(environment.length); 
+    sumEnv = Math.round(sumEnv * 10) / 10;
     document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
 
     //Storing [i] Social score into an array
@@ -105,6 +109,7 @@ addSymbolButton.addEventListener('click', () => {
     }  
     //To get average Social score
     sumSoc = sumSoc/(social.length);
+    sumSoc = Math.round(sumSoc * 10) / 10;
     document.getElementById('totalSoc').innerHTML = "Total Social Score : " + sumSoc;
 
     //Storing [i] Governance score into an array
@@ -114,6 +119,7 @@ addSymbolButton.addEventListener('click', () => {
     }  
     //To get average Governance score
     sumGov = sumGov/(governance.length);
+    sumGov = Math.round(sumGov * 10) / 10;
     document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
 
     //To get healthbar %
@@ -166,6 +172,9 @@ openS.addEventListener('click', () => {
 openG.addEventListener('click', () => {
     modal_containerG.classList.add('show');
 });
+openOverall.addEventListener('click', () => {
+    modal_containerOverall.classList.add('show');
+});
 
 //Modal close button
 closeE.addEventListener('click', () => {
@@ -176,6 +185,9 @@ closeS.addEventListener('click', () => {
 });
 closeG.addEventListener('click', () => {
     modal_containerG.classList.remove('show');
+});
+closeOverall.addEventListener('click', () => {
+    modal_containerOverall.classList.remove('show');
 });
 
 //config is for chart.js, initialised type as doughnut chart

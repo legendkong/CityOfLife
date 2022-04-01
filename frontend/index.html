@@ -96,10 +96,10 @@
                <!-- Health bar -->
                <div class="health-bar">
                   <div class="health-bar-value"></div>
-                  <div class="health-bar-fill"></div>
-                  <input type="button" value="?" id="questionmark">
+                  <div class="health-bar-fill"></div>    
+                  <button id="openOverall">?</button>
                </div>
-               
+               <!-- <input type="button" value="?" id="questionmark"> -->
          </div>
          <!-- Chart.js chart -->
          <div class= "chart" style="position: absolute; top:55px; right: 45px; width:200px; height:200px;">
@@ -214,6 +214,35 @@
                </div>
             </div>
             <button id="closeG">CLOSE</button>
+         </div>
+      </div>
+
+      <!-- Overall portfolio health modal -->
+      <div class="modal-container" id="modal_containerOverall">
+         <div class="modalOverall">
+            <h1>What does your Portfolio Health say about your investments?</h1>
+            <p>Let's get to know more about what your overall ESG scores mean to your portfolio health.</p>
+            <div class="columns">
+               <div class="column">
+                  <img src="./ESGcontributors_images/ToxicEmission.png" alt=""><br>
+                  Portfolio Health equal to or above 75%
+                  <ul class="modalUL">
+                     <li>Composition of the board in terms of diversity and independence</li>
+                     <li>Executive compensation</li>
+                     <li>Ownership</li>
+                     <li>Accounting practices</li>
+                  </ul>
+               </div>
+               <div class="column1">
+                  <img src="./ESGcontributors_images/tax.png" alt=""><br>
+                  Portfolio Health below 75%
+                  <ul class="modalUL">
+                     <li>Business ethics</li>
+                     <li>Tax transparency</li>
+                  </ul>
+               </div>
+            </div>
+            <button id="closeOverall">CLOSE</button>
          </div>
       </div>
       <!-- END OF MODALS -->
