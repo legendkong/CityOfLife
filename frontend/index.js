@@ -108,6 +108,7 @@ addSymbolButton.addEventListener('click', () => {
     sumGov = Math.round(sumGov * 10) / 10;
     document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
 
+
 //write function to download text file
 function download(filename, text) {
     var element = document.createElement('a');
@@ -227,7 +228,9 @@ function addSymbol(symbol, shares) {
             const symbolData = {...data, shares};
             symbols.push(symbolData);
             drawList();
-            addSymbolToChart(symbolData);
+            totalValueOfShares.push(totalStockPrice);
+            console.log(totalValueOfShares);
+            addSymbolToChart(symbolData);            
         });
 }
 
@@ -236,14 +239,14 @@ function addSymbol(symbol, shares) {
 function drawList() {
     symbolList.innerHTML = "";
     symbols.forEach((symbol) => {
-        console.log(symbol);
-        totalValueOfShares.push(round(symbol.price * symbol.shares));
+        console.log(symbol);        
         const li = document.createElement('li');
         li.innerText = symbol.shares +" "+ symbol.symbol + " " + " x " + "$" + symbol.price + " = " + "$" + round(symbol.price * symbol.shares);
         symbolList.appendChild(li);
-        console.log(totalValueOfShares);
+        totalStockPrice = round(symbol.price * symbol.shares);
     });
 }
+
 
 
 function addSymbolToChart(symbol) {
