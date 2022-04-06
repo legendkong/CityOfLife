@@ -19,25 +19,11 @@ const closeOverall = document.getElementById('closeOverall');
 var environment = [];
 var social = [];
 var governance = [];
-
-
-
-
-// function showImage() {
-//     image = document.createElement('image');
-//     document.body.appendChild(image)
-//     image.innerHTML = `<img src=https://logo.clearbit.com/${symbolInput.value}.com></img>`;
-// }
-
-// var img = document.createElement("img");
-// img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
-// var src = document.getElementById("image");
-// src.appendChild(img);
+var totalValueOfShares = [];
 
 function showDiv() {
     document.getElementById('bodypf').style.display = "block";
 }
-
 
 addSymbolButton.addEventListener('click', () =>  {
     var img = document.createElement("img");
@@ -121,6 +107,22 @@ addSymbolButton.addEventListener('click', () => {
     sumGov = sumGov/(governance.length);
     sumGov = Math.round(sumGov * 10) / 10;
     document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
+
+//write function to download text file
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+//download text file
+download("ESG.txt", ("Total Environment score: " + sumEnv + "\n" + "Totol Social Score: " + sumSoc + "\n" + "Total Governance Score: " + sumGov));
 
     //To get healthbar %
     totalSum = sumEnv + sumSoc + sumGov;
@@ -229,15 +231,20 @@ function addSymbol(symbol, shares) {
         });
 }
 
+
+
 function drawList() {
     symbolList.innerHTML = "";
     symbols.forEach((symbol) => {
         console.log(symbol);
+        totalValueOfShares.push(round(symbol.price * symbol.shares));
         const li = document.createElement('li');
         li.innerText = symbol.shares +" "+ symbol.symbol + " " + " x " + "$" + symbol.price + " = " + "$" + round(symbol.price * symbol.shares);
         symbolList.appendChild(li);
+        console.log(totalValueOfShares);
     });
 }
+
 
 function addSymbolToChart(symbol) {
     myChart.data.labels.push(symbol.symbol);
