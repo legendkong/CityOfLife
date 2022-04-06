@@ -245,6 +245,7 @@ function addSymbol(symbol, shares) {
             for (let i = 0; i < totalValueOfShares.length; i++) {
                 totalPortfolioValue = totalPortfolioValue + totalValueOfShares[i];
             }
+            document.getElementById("totalPortfolioValue").innerHTML = "Total holdings: " + Math.round(totalPortfolioValue);
             console.log(totalPortfolioValue);
 
             //Stock percentage contribution array
@@ -282,6 +283,16 @@ function addSymbolToChart(symbol) {
     myChart.data.datasets[0].backgroundColor.push(getRandomColor());
     myChart.update();
 }
+
+
+function sellStockToChart(symbol) {
+    myChart.data.datasets[0].data[symbol] = 50; // Would update the first dataset's value of 'March' to be 50
+    myChart.update(); // Calling update now animates the position of March from 90 to 50.
+}
+
+
+
+
 
 //Function to generate random colour for the chart
 function getRandomColor() {

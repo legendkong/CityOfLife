@@ -27,7 +27,7 @@
       <div>
          <input placeholder="symbol" id="symbol-input">
          <input placeholder="shares" type="number" id="shares-input">
-         <button id="add-symbol-button" onclick="showDiv()">add</button>
+         <button id="add-symbol-button" onclick="showDiv()">Buy/Sell</button><br>
       </div>
 
       <!-- SDG Goals portion -->
@@ -105,7 +105,8 @@
          </div>
          <!-- Chart.js chart -->
          <div class= "chart" style="position: absolute; top:55px; right: 45px; width:200px; height:200px;">
-         <canvas id="chart"></canvas>
+         <canvas id="chart"></canvas><br>
+         <p id="totalPortfolioValue"></p>
          </div>
       </div>
    </div>

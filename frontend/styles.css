@@ -402,3 +402,9 @@ a{
    font-weight: bold;
    cursor: pointer;
 }
+
+#totalPortfolioValue {
+   margin-top: 0;
+   margin-left: 10px;
+   padding-bottom: 10px;
+}
