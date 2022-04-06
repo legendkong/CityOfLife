@@ -21,6 +21,7 @@ var social = [];
 var governance = [];
 var totalValueOfShares = [];
 
+
 function showDiv() {
     document.getElementById('bodypf').style.display = "block";
 }
@@ -107,6 +108,8 @@ addSymbolButton.addEventListener('click', () => {
     sumGov = sumGov/(governance.length);
     sumGov = Math.round(sumGov * 10) / 10;
     document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
+    
+    
 
 
 //write function to download text file
@@ -228,8 +231,19 @@ function addSymbol(symbol, shares) {
             const symbolData = {...data, shares};
             symbols.push(symbolData);
             drawList();
+
+            //Array of stock holdings value stored
             totalValueOfShares.push(totalStockPrice);
             console.log(totalValueOfShares);
+            
+            //Total portfolio value (sum of all stock holdings)
+            let totalPortfolioValue = 0;
+            for (let i = 0; i < totalValueOfShares.length; i++) {
+                totalPortfolioValue = totalPortfolioValue + totalValueOfShares[i];
+            }
+            console.log(totalPortfolioValue);
+
+            //Add symbol to chart 
             addSymbolToChart(symbolData);            
         });
 }
