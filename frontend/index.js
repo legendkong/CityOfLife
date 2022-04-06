@@ -22,6 +22,8 @@ var governance = [];
 var totalValueOfShares = [];
 
 
+
+
 function showDiv() {
     document.getElementById('bodypf').style.display = "block";
 }
@@ -242,6 +244,14 @@ function addSymbol(symbol, shares) {
                 totalPortfolioValue = totalPortfolioValue + totalValueOfShares[i];
             }
             console.log(totalPortfolioValue);
+            
+            //Add percentage array
+            portfolioPercentage = [];
+            for(let i = 0; i < totalValueOfShares.length; i++) {
+                percentage = totalValueOfShares[i] / totalPortfolioValue;
+                portfolioPercentage.push(percentage);
+            }
+            console.log(portfolioPercentage);
 
             //Add symbol to chart 
             addSymbolToChart(symbolData);            
@@ -258,6 +268,7 @@ function drawList() {
         li.innerText = symbol.shares +" "+ symbol.symbol + " " + " x " + "$" + symbol.price + " = " + "$" + round(symbol.price * symbol.shares);
         symbolList.appendChild(li);
         totalStockPrice = round(symbol.price * symbol.shares);
+        
     });
 }
 
