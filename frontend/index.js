@@ -82,13 +82,15 @@ addSymbolButton.addEventListener('click', () => {
 
     //Storing [i] Environmental score into an array
     environment.push(completedata[0].environment_score);
-    for(let i = 0 ; i < environment.length; i++){
-    sumEnv += environment[i];
+    for(let i = 0 ; i < environment.length; i++){      
+        environment[i] = environment[i] * portfolioPercentage[i]; //<-- implemented
+    //sumEnv += environment[i];
     }  
 
     //To get average Environment score
-    sumEnv = sumEnv/(environment.length); 
-    sumEnv = Math.round(sumEnv * 10) / 10;
+    //sumEnv = sumEnv/(environment.length); 
+    //sumEnv = Math.round(sumEnv * 10) / 10;
+    sumEnv += environment[i]; //<-- implemented
     document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
 
     //Storing [i] Social score into an array
@@ -244,8 +246,8 @@ function addSymbol(symbol, shares) {
                 totalPortfolioValue = totalPortfolioValue + totalValueOfShares[i];
             }
             console.log(totalPortfolioValue);
-            
-            //Add percentage array
+
+            //Stock percentage contribution array
             portfolioPercentage = [];
             for(let i = 0; i < totalValueOfShares.length; i++) {
                 percentage = totalValueOfShares[i] / totalPortfolioValue;
