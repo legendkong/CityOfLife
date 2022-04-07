@@ -1,8 +1,8 @@
 
-const addSymbolButton = document.getElementById('add-symbol-button');
-const symbolInput = document.getElementById('symbol-input');
-const sharesInput = document.getElementById('shares-input');
-const symbolList = document.getElementById('symbol-list');
+var buySymbolButton = document.getElementById('buy-symbol-button');
+var symbolInput = document.getElementById('symbol-input');
+var sharesInput = document.getElementById('shares-input');
+var symbolList = document.getElementById('symbol-list');
 const openE = document.getElementById('openE');
 const openS = document.getElementById('openS');
 const openG = document.getElementById('openG');
@@ -22,7 +22,7 @@ var governance = [];
 var totalValueOfShares = [];
 
 /*-----------------------Fetch request to get company logo image--------------------------*/
-addSymbolButton.addEventListener('click', () =>  {
+buySymbolButton.addEventListener('click', () =>  {
     var img = document.createElement("img");
     img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
     var src = document.getElementById("image");
@@ -33,9 +33,8 @@ addSymbolButton.addEventListener('click', () =>  {
 });
 
 
-
 /*-----------------------Fetch request to get Sustainable Development Goals(UN) data --------------------------*/
-addSymbolButton.addEventListener('click', () => {
+buySymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/goals?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
 }).then((completedata)=>{
@@ -47,7 +46,7 @@ addSymbolButton.addEventListener('click', () => {
 })});
 
 /*----------------------------------------Fetch request from ESG data API-----------------------------------------*/
-addSymbolButton.addEventListener('click', () => {
+buySymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
 }).then((completedata)=>{
@@ -205,14 +204,13 @@ const config = {
     },
     options: {}
 };
-
 const myChart = new Chart(
     document.getElementById('chart'),
     config
 );
 
 //Event listener for add symbol button which activates backend request and displays data
-addSymbolButton.addEventListener('click', () => {
+buySymbolButton.addEventListener('click', () => {
     const symbolInputValue = symbolInput.value.toUpperCase();
     const sharesInputValue = +sharesInput.value;
     addSymbol(symbolInputValue, sharesInputValue);
@@ -238,7 +236,7 @@ function addSymbol(symbol, shares) {
             for (let i = 0; i < totalValueOfShares.length; i++) {
                 totalPortfolioValue = totalPortfolioValue + totalValueOfShares[i];
             }
-            document.getElementById("totalPortfolioValue").innerHTML = "Total holdings: " + Math.round(totalPortfolioValue);
+            document.getElementById("totalPortfolioValue").innerHTML = "Total holdings: $ " + Math.round(totalPortfolioValue);
             console.log(totalPortfolioValue);
 
             //Stock percentage contribution array
@@ -248,12 +246,15 @@ function addSymbol(symbol, shares) {
                 portfolioPercentage.push(percentage);
             }
             console.log(portfolioPercentage);
-
+            
+            if(symbolData.shares > 0){
             //Add symbol to chart 
-            addSymbolToChart(symbolData);            
+            addSymbolToChart(symbolData);         
+            }else if(symbolData.shares < 0){
+            minusSymbolFromChart(symbolData)
+            };
         });
 }
-
 
 /*------------------------------------DISPLAY OF STOCK HOLDINGS--------------------------------------- */
 function drawList() {
@@ -263,24 +264,23 @@ function drawList() {
         const li = document.createElement('li');
         li.innerText = symbol.shares +" "+ symbol.symbol + " " + " x " + "$" + symbol.price + " = " + "$" + round(symbol.price * symbol.shares);
         symbolList.appendChild(li);
-        totalStockPrice = round(symbol.price * symbol.shares);
-        
+        totalStockPrice = round(symbol.price * symbol.shares);       
     });
 }
 
 
-/*------------------------------------MODAL FEATURE--------------------------------------- */
+/*------------------------------------UPDATE CHART FEATURE--------------------------------------- */
 function addSymbolToChart(symbol) {
     myChart.data.labels.push(symbol.symbol);
     myChart.data.datasets[0].data.push(round(symbol.shares * symbol.price));
     myChart.data.datasets[0].backgroundColor.push(getRandomColor());
-    myChart.update();
+    myChart.update(); 
 }
-
-
-function sellStockToChart(symbol) {
-    myChart.data.datasets[0].data[symbol] = 50; // Would update the first dataset's value of 'March' to be 50
-    myChart.update(); // Calling update now animates the position of March from 90 to 50.
+function minusSymbolFromChart(symbol) {
+    myChart.reset();
+    myChart.data.datasets[0].data.pop(round(symbol.shares * symbol.price));
+    myChart.data.datasets[0].backgroundColor.push(getRandomColor());
+    myChart.update(); 
 }
 
 

@@ -292,7 +292,7 @@ a{
    border-radius: 20px;
    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
    width: 800px;
-   height: 500px;
+   height: 600px;
    max-width: 100%;
    max-height: 100%;
    text-align: center;
@@ -407,4 +407,16 @@ a{
    margin-top: 0;
    margin-left: 10px;
    padding-bottom: 10px;
+}
+
+#goodcity, #badcity {
+      width: 350px;
+      height: 200px;
+      object-fit: cover;
+}
+
+#green {
+   color: green;
+   font-weight: bolder;
+   font-size: large;
 }

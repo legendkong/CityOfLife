@@ -15,7 +15,7 @@
       <script src="./index.js" defer></script>
 
 </head>
-   <body id="bg" background="isometric-city.png">
+   <body id="bg" background="./mainImages/isometric-city.png">
       <!-- Title -->
       <h1>City of Life</h1>
       <h2>Portfolio tracker</h2>
@@ -27,9 +27,9 @@
       <div>
          <input placeholder="symbol" id="symbol-input">
          <input placeholder="shares" type="number" id="shares-input">
-         <button id="add-symbol-button" onclick="showDiv()">Buy/Sell</button><br>
+         <button id="buy-symbol-button" onclick="showDiv()">Buy/Sell</button><br>
       </div>
-
+      
       <!-- SDG Goals portion -->
       <ul id="symbol-list">
       </ul>
@@ -44,7 +44,7 @@
                   </div>
                   <div class="flip-card-back">
                      <p id="goals"></p>
-                     <a href="https://sdgs.un.org/goals" target="_blank"><img id="sdglogo" src="SDG_UN_LOGO.png" alt=""></a>
+                     <a href="https://sdgs.un.org/goals" target="_blank"><img id="sdglogo" src="./mainImages/SDG_UN_LOGO.png" alt=""></a>
             </div>
          </div>
       </div>
@@ -55,7 +55,7 @@
 
             <!-- Environment card -->
             <article>
-               <img src="pixel_tree1.png" alt="">
+               <img src="./mainImages/pixel_tree1.png" alt="">
                <div class ="text">
                   <h3>ENVIRONMENTAL</h3>
                   <p id="env"></p>
@@ -65,7 +65,7 @@
 
             <!-- Social card -->
             <article>
-               <img src="pixel_handshake.png" alt="">
+               <img src="./mainImages/pixel_handshake.png" alt="">
                <div class="text">
                   <h3>SOCIAL</h3>
                   <p id="soc"></p>
@@ -75,7 +75,7 @@
 
             <!-- Governance card -->
             <article>
-               <img src="pixel_governance.png" alt="">
+               <img src="./mainImages/pixel_governance.png" alt="">
                <div class="text">
                   <h3>GOVERNANCE</h3>
                   <p id="gov"></p>
@@ -224,21 +224,23 @@
       <div class="modal-container" id="modal_containerOverall">
          <div class="modalOverall">
             <h1>What does your Portfolio Health say about your investments?</h1>
-            <p>Let's get to know more about what your overall ESG scores mean to your portfolio health.</p>
+            <p>Here are some rewarding reasons to consider ESG when investing:</p>
             <div class="columns">
                <div class="column">
-                  <img src="./ESGcontributors_images/ToxicEmission.png" alt=""><br>
-                  Portfolio Health equal to or above 75%
+                  <img src="./mainImages/goodCityNew.PNG" id="goodcity" alt=""><br>
+                  Portfolio Health equal to or above 70%
                   <ul class="modalUL">
-                     <li>Composition of the board in terms of diversity and independence</li>
-                     <li>Executive compensation</li>
-                     <li>Ownership</li>
-                     <li>Accounting practices</li>
+                     Great job! Below are some proven effects of ESG:
+                     <li>Smoother operations</li>
+                     <li>Positive morale</li>
+                     <li>Market enthusiasm for the ethical state of the company</li>
+                     <li>Improved financial returns</li>
+                     <li id="green">ESG investing is the way to go!</li>
                   </ul>
                </div>
                <div class="column1">
-                  <img src="./ESGcontributors_images/tax.png" alt=""><br>
-                  Portfolio Health below 75%
+                  <img src="./mainImages/badCityNew.PNG" id="badcity" alt=""><br>
+                  Portfolio Health below 70%
                   <ul class="modalUL">
                      <li>Business ethics</li>
                      <li>Tax transparency</li>
