@@ -3,7 +3,6 @@ const addSymbolButton = document.getElementById('add-symbol-button');
 const symbolInput = document.getElementById('symbol-input');
 const sharesInput = document.getElementById('shares-input');
 const symbolList = document.getElementById('symbol-list');
-const symbols = [];
 const openE = document.getElementById('openE');
 const openS = document.getElementById('openS');
 const openG = document.getElementById('openG');
@@ -16,24 +15,18 @@ const closeE = document.getElementById('closeE');
 const closeS = document.getElementById('closeS');
 const closeG = document.getElementById('closeG');
 const closeOverall = document.getElementById('closeOverall');
+const symbols = [];
 var environment = [];
 var social = [];
 var governance = [];
 var totalValueOfShares = [];
 
-
-
-
-function showDiv() {
-    document.getElementById('bodypf').style.display = "block";
-}
-
+/*-----------------------Fetch request to get company logo image--------------------------*/
 addSymbolButton.addEventListener('click', () =>  {
     var img = document.createElement("img");
     img.src = `https://logo.clearbit.com/${symbolInput.value}.com`;
     var src = document.getElementById("image");
     src.appendChild(img); //Adds one element to the node
-
     //If don't want images to stack:
     document.getElementById("image").innerHTML = ""; // Clears the image div, so that the images wont stack 
     document.getElementById("image").appendChild(img);
@@ -41,40 +34,37 @@ addSymbolButton.addEventListener('click', () =>  {
 
 
 
-//Fetch request from SDG data API
+/*-----------------------Fetch request to get Sustainable Development Goals(UN) data --------------------------*/
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/goals?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
 }).then((completedata)=>{
-
     //SDG goals
     document.getElementById('goals').innerHTML=
     "Goal 1: " + completedata[0].goals[0].sdg + "<br>" + "Goal 2: "+ completedata[0].goals[1].sdg + "<br>" + "Goal 3: "+ completedata[0].goals[2].sdg + "<br>" + "Goal 4: "+ completedata[0].goals[3].sdg + "<br>" + "Goal 5: "+ completedata[0].goals[4].sdg;
-
 }).catch((err)=>{
     console.log(err);
 })});
 
-
-
-//Fetch request from ESG API
+/*----------------------------------------Fetch request from ESG data API-----------------------------------------*/
 addSymbolButton.addEventListener('click', () => {
     fetch(`https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization/search?q=${symbolInput.value}&token=ddd9b621c5494b4af7b4d8d9312dc66b`).then((data)=>{
     return data.json();
 }).then((completedata)=>{
-
+    //Display company name
     document.getElementById('name'). innerHTML = completedata[0].company_name;
 
-    //Environmental
+    //Display Environmental scores
     document.getElementById('env').innerHTML=
     "Grade: " + completedata[0].environment_grade + "<br>" + "Level: "+ completedata[0].environment_level + "<br>" + "Score: "+ completedata[0].environment_score;
 
-    //Social
+    //Display Social scores
     document.getElementById('soc').innerHTML = "Grade: " + completedata[0].social_grade + "<br>" + "Level: "+ completedata[0].social_level + "<br>" + "Score: "+ completedata[0].social_score;
 
-    //Governance
+    //Display Governance scores
     document.getElementById('gov').innerHTML = "Grade: " + completedata[0].governance_grade + "<br>" + "Level: "+ completedata[0].governance_level + "<br>" + "Score: "+ completedata[0].governance_score;
 
+    /*-------------------CALCULATION OF WEIGHTED E, S, G ratings according to portfolio allocation %-------------------*/
     //Initializing sum of E,S,G variables
     let sumEnv = 0;
     let sumSoc = 0;
@@ -82,58 +72,57 @@ addSymbolButton.addEventListener('click', () => {
 
     //Storing [i] Environmental score into an array
     environment.push(completedata[0].environment_score);
+    var weightedE = [];
     for(let i = 0 ; i < environment.length; i++){      
-        environment[i] = environment[i] * portfolioPercentage[i]; //<-- implemented
-    //sumEnv += environment[i];
+        //weightedE array = individual env score * holdings percentage
+        weightedE[i] = environment[i] * portfolioPercentage[i];
+        //sum of weightedE array elements
+        sumEnv += weightedE[i]; 
     }  
-
-    //To get average Environment score
-    //sumEnv = sumEnv/(environment.length); 
-    //sumEnv = Math.round(sumEnv * 10) / 10;
-    sumEnv += environment[i]; //<-- implemented
-    document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + sumEnv;
+    //Display total weighted Environment score
+    document.getElementById('totalEnv').innerHTML = "Total Environmental Score : " + Math.round(sumEnv);
 
     //Storing [i] Social score into an array
     social.push(completedata[0].social_score);
+    var weightedS = [];
     for(let i = 0 ; i < social.length; i++){
-    sumSoc += social[i];
+        //weightedS array = individual soc score * holdings percentage
+        weightedS[i] = social[i] * portfolioPercentage[i];
+        //sum of weightedS array elements
+        sumSoc += weightedS[i];
     }  
-    //To get average Social score
-    sumSoc = sumSoc/(social.length);
-    sumSoc = Math.round(sumSoc * 10) / 10;
-    document.getElementById('totalSoc').innerHTML = "Total Social Score : " + sumSoc;
+    //Display total weighted Social score
+    document.getElementById('totalSoc').innerHTML = "Total Social Score : " + Math.round(sumSoc);
 
     //Storing [i] Governance score into an array
     governance.push(completedata[0].governance_score);
+    var weightedG = [];
     for(let i = 0 ; i < governance.length; i++){
-    sumGov += governance[i];
+        //weightedG array = individual gov score * holdings percentage
+        weightedG[i] = governance[i] * portfolioPercentage[i];
+        //sum of weightedS array elements
+        sumGov += weightedG[i];
     }  
-    //To get average Governance score
-    sumGov = sumGov/(governance.length);
-    sumGov = Math.round(sumGov * 10) / 10;
-    document.getElementById('totalGov').innerHTML = "Total Governance Score : " + sumGov;
+    //Display total weighted Governance score
+    document.getElementById('totalGov').innerHTML = "Total Governance Score : " + Math.round(sumGov);
     
     
+    /*-------------------Function to write and save data(weighed E,S,G values) into text file-------------------*/
+    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+    //Text file auto download
+    download("CityOfLife_ESG.txt", ("m_E: " + sumEnv + "\n" + "m_S: " + sumSoc + "\n" + "m_G: " + sumGov));
 
-
-//write function to download text file
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
-}
-//download text file
-download("ESG.txt", ("Total Environment score: " + sumEnv + "\n" + "Totol Social Score: " + sumSoc + "\n" + "Total Governance Score: " + sumGov));
-
+    /*---------------------------HEALTHBAR FEATURE------------------------------*/
     //To get healthbar %
-    totalSum = sumEnv + sumSoc + sumGov;
+    totalSum = sumEnv + sumSoc + sumGov - 100;
     totalSum = totalSum/10;
     totalSum = Math.round(totalSum * 10) / 10;
 
@@ -158,20 +147,21 @@ download("ESG.txt", ("Total Environment score: " + sumEnv + "\n" + "Totol Social
         this.update();
     }
 
-    update(){
-        const percentage = this.value + '%'; 
-        this.fillElem.style.width = percentage;
-        this.valueElem.textContent = percentage;
+        update(){
+            const percentage = this.value + '%'; 
+            this.fillElem.style.width = percentage;
+            this.valueElem.textContent = percentage;
+        }
     }
-}
-//Healthbar object
-const hb = new HealthBar(document.querySelector('.health-bar'), totalSum);
-hb.setValue(totalSum);
-    
-}).catch((err)=>{
-    console.log(err);
-})});
+    //Healthbar object
+    const hb = new HealthBar(document.querySelector('.health-bar'), totalSum);
+    hb.setValue(totalSum);
+        
+    }).catch((err)=>{
+        console.log(err);
+    })});
 
+/*------------------------------------MODAL FEATURE--------------------------------------- */
 //Show modal pop-up
 openE.addEventListener('click', () => {
     modal_containerE.classList.add('show');
@@ -200,7 +190,9 @@ closeOverall.addEventListener('click', () => {
     modal_containerOverall.classList.remove('show');
 });
 
-//config is for chart.js, initialised type as doughnut chart
+
+/*------------------------------------CHART FEATURE--------------------------------------- */
+//config for chart.js, initialised type as doughnut chart
 const config = {
     type: 'doughnut',
     data: {
@@ -228,6 +220,7 @@ addSymbolButton.addEventListener('click', () => {
     sharesInput.value = "";
 });
 
+/*------------------------------------FUNCTION UPON CLICKING ADD SYMBOL--------------------------------------- */
 function addSymbol(symbol, shares) {
     fetch("/price?symbol=" + symbol)
         .then(response => response.json())
@@ -262,7 +255,7 @@ function addSymbol(symbol, shares) {
 }
 
 
-
+/*------------------------------------DISPLAY OF STOCK HOLDINGS--------------------------------------- */
 function drawList() {
     symbolList.innerHTML = "";
     symbols.forEach((symbol) => {
@@ -276,7 +269,7 @@ function drawList() {
 }
 
 
-
+/*------------------------------------MODAL FEATURE--------------------------------------- */
 function addSymbolToChart(symbol) {
     myChart.data.labels.push(symbol.symbol);
     myChart.data.datasets[0].data.push(round(symbol.shares * symbol.price));
@@ -289,9 +282,6 @@ function sellStockToChart(symbol) {
     myChart.data.datasets[0].data[symbol] = 50; // Would update the first dataset's value of 'March' to be 50
     myChart.update(); // Calling update now animates the position of March from 90 to 50.
 }
-
-
-
 
 
 //Function to generate random colour for the chart
@@ -309,3 +299,7 @@ function round(value) {
     return Math.round(value * 100) / 100;
 }
 
+//Show Div upon button click
+function showDiv() {
+    document.getElementById('bodypf').style.display = "block";
+}
