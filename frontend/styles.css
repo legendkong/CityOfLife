@@ -29,11 +29,26 @@ button{
    background-color: orange;
    font-family:'Press Start 2P', cursive;
    font-size: 12px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+#buy-symbol-button{
+   background-color: orange;
+   font-family:'Press Start 2P', cursive;
+   font-size: 12px;
+   border-radius: 10px;
+   height: 1cm;
+   width: 3cm;
 }
 
 input{
    border: 2px solid orange;
-   border-radius: 4px;
+   border-radius: 10px;
+   height: 1cm;
+   width: 3.5cm;
+   font-size: small;
+   font-family:'Press Start 2P',
+   cursive;
 }
 
 ul{
@@ -182,7 +197,7 @@ img{
    transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/* Do a horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
    transform: rotateY(180deg);
 }
@@ -334,7 +349,7 @@ a{
    cursor: pointer;
 }
 
-#closeE:hover, #closeS:hover, #closeG:hover, #closeOverall:hover{
+#closeE:hover, #closeS:hover, #closeG:hover, #closeOverall:hover,#buy-symbol-button:hover{
    transform: translateY(5px);
 }
 
@@ -438,3 +453,4 @@ a{
    border-radius: 50px;
    padding: 20px;
 }
+

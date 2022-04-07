@@ -160,7 +160,7 @@ buySymbolButton.addEventListener('click', () => {
         console.log(err);
     })});
 
-/*------------------------------------MODAL FEATURE--------------------------------------- */
+/*------------------------------------MODAL FEATURES--------------------------------------- */
 //Show modal pop-up
 openE.addEventListener('click', () => {
     modal_containerE.classList.add('show');
@@ -190,7 +190,7 @@ closeOverall.addEventListener('click', () => {
 });
 
 
-/*------------------------------------CHART FEATURE--------------------------------------- */
+/*------------------------------------INITIALIZE CHARTJS--------------------------------------- */
 //config for chart.js, initialised type as doughnut chart
 const config = {
     type: 'doughnut',
@@ -218,7 +218,7 @@ buySymbolButton.addEventListener('click', () => {
     sharesInput.value = "";
 });
 
-/*------------------------------------FUNCTION UPON CLICKING ADD SYMBOL--------------------------------------- */
+/*------------------------------------ON CLICK ADD SYMBOL--------------------------------------- */
 function addSymbol(symbol, shares) {
     fetch("/price?symbol=" + symbol)
         .then(response => response.json())
@@ -284,6 +284,7 @@ function minusSymbolFromChart(symbol) {
 }
 
 
+/*------------------------------------MISCELLANEOUS FUNCTIONS --------------------------------------- */
 //Function to generate random colour for the chart
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
