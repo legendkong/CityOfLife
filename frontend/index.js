@@ -121,7 +121,7 @@ buySymbolButton.addEventListener('click', () => {
 
     /*---------------------------HEALTHBAR FEATURE------------------------------*/
     //To get healthbar %
-    totalSum = sumEnv + sumSoc + sumGov - 100;
+    totalSum = sumEnv + sumSoc + sumGov - 120;
     totalSum = totalSum/10;
     totalSum = Math.round(totalSum * 10) / 10;
 
