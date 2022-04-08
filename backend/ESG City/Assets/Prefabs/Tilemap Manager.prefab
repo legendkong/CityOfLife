@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4552617626603437442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4552617626603437440}
+  - component: {fileID: 4552617626603437441}
+  - component: {fileID: 4552617626022640721}
+  m_Layer: 0
+  m_Name: Tilemap Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4552617626603437440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552617626603437442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4552617626603437441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552617626603437442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d07b7c8806b8ada49a5f13dfd7507747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingTiles:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 14a60f794cae73240832cd4be175d61b, type: 2}
+  grassMap: {fileID: 0}
+  roadsMap: {fileID: 0}
+  riversMap: {fileID: 0}
+  buildingsMap: {fileID: 0}
+  buildingTileBase: {fileID: 0}
+  sustainableTileBase: {fileID: 0}
+  treeTileBase: {fileID: 0}
+  tileData: []
+  eMetric: 300
+  sMetric: 300
+  gMetric: 300
+--- !u!114 &4552617626022640721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552617626603437442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26fc95ce53278841aa5383d778e8808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pineTree: {fileID: 11400000, guid: cc0818de694c98e438777380fe637292, type: 2}
+  circleTree: {fileID: 11400000, guid: 2e5cd8ff654c48c4e9cd11a952a13bee, type: 2}
+  choppedTree: {fileID: 11400000, guid: 4f956f5b2b87b3047af0947da1a9481b, type: 2}
+  building1:
+  - {fileID: 11400000, guid: fcc0247122802864c90ee8f3bf931e9d, type: 2}
+  - {fileID: 11400000, guid: 3d4b1df8c4fb97d40b79b4eac4515e2a, type: 2}
+  - {fileID: 11400000, guid: 3c20d06439abab84680aed7ed2e0da11, type: 2}
+  building2:
+  - {fileID: 11400000, guid: 8d983b7f4f5d129458932b4806afefd2, type: 2}
+  - {fileID: 11400000, guid: 016d89e83234d274db459becc72148d6, type: 2}
+  - {fileID: 11400000, guid: d58c7cc5a2804044da526cae2f76eabb, type: 2}
+  building3:
+  - {fileID: 11400000, guid: 1be54be357d8c9c4b969443cb0e82447, type: 2}
+  - {fileID: 11400000, guid: 582c9949cb14f8e4d915d19bc34c4c9a, type: 2}
+  - {fileID: 11400000, guid: e7452d8e162fee0409a96bcb30d35373, type: 2}
+  building4:
+  - {fileID: 11400000, guid: 7c3fa244ac747004995e7083760ad792, type: 2}
+  - {fileID: 11400000, guid: 50c618feb33459143a0953af5ce3a093, type: 2}
+  - {fileID: 11400000, guid: a61c2c0ad714f684888d224a14dea43c, type: 2}
+  building5:
+  - {fileID: 11400000, guid: f4bba2071eba1cb47ae4e73dafa8870f, type: 2}
+  - {fileID: 11400000, guid: d5522f737a6425b4ba70ff005f939c2a, type: 2}
+  - {fileID: 11400000, guid: ec66035e3a05e754c847cc5dc80877a9, type: 2}
+  building6:
+  - {fileID: 11400000, guid: 2f8c99d936c875e48b3903e265b42c77, type: 2}
+  - {fileID: 11400000, guid: a9e2b84b645b7a44e95ea79beb9cceca, type: 2}
+  - {fileID: 11400000, guid: f87b0c9410c1b9744bde6e38ab5526e2, type: 2}
+  building7:
+  - {fileID: 11400000, guid: f15fbe6496e53464c81919a6e4d66acd, type: 2}
+  - {fileID: 11400000, guid: 8750f8d722fbd8a4f86a8bc391250162, type: 2}
+  - {fileID: 11400000, guid: 957304e6a7c2dba4e90f0608976eb261, type: 2}
+  building8:
+  - {fileID: 11400000, guid: 095ff9f009f241f458492d0631dd7809, type: 2}
+  - {fileID: 11400000, guid: b8625cc7e9c0a714490b9eec1d809b80, type: 2}
+  - {fileID: 11400000, guid: 10496f9ea341b3f44ba84f1d19aa4878, type: 2}
+  building9:
+  - {fileID: 11400000, guid: 47734fe3e7e885a4f98690af9edb52c8, type: 2}
+  - {fileID: 11400000, guid: 58c9bd16a0caeaf4489d73097a52e3f4, type: 2}
+  - {fileID: 11400000, guid: 7caeec745bc38b24aa2d4befbad0e5d0, type: 2}
+  brokenBuilding1: []
+  brokenBuilding2: []
+  brokenBuilding3: []
+  brokenBuilding4: []
+  brokenBuilding5: []
+  brokenBuilding6: []
+  brokenBuilding7: []
+  brokenBuilding8: []
+  brokenBuilding9: []
