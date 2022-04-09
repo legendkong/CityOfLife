@@ -164,4 +164,7 @@ Below are some scenarios when the E, S and G score changes.
 </p>
 
 ## Footnotes
-What we are trying to achieve by building **City of Life** is to allow E,S and G to be more understandable, digestible and useable for the average investors, and more so for the new investors who have never heard of ESG investing. <br><br>
+What we are trying to achieve by building **City of Life** is to allow E, S and G to be more understandable, digestible and useable for the average investors, and more so for the new investors who have never heard of ESG investing. <br><br>
+By implementing and building a gamified solution, we were able to translate "data" into visually impactful real-world-city scenarios where instead of just numbers and figures, users will be able to see and learn the benefits of ESG investing and also the disadvantages of not considering ESG while investing. <br>
+
+_**Our world is changing faster than anyone predicted. We believe responsible investing has a huge role to play in shaping a better world and building a sustainable future.**_
