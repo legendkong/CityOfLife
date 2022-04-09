@@ -27,9 +27,22 @@ External links: <br>
 ***Back-End*** <br>
 Development platform : [Unity](https://unity.com/)<br>
 
-## Front-End
+# Front-End
 A stock portfolio app that allows user to buy and sell stocks, then to retrieve and feed overall weighted E, S and G data to the back-end, based on the user's portfolio.
 <p align="center">
   <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/FinalFrontEnd.gif" width="400"> <br>
-  The app also contains educational information to boost user's knowledge and awareness on ESG.
+  Features of the app.
 </p>
+
+## Features
+<p align="center">
+<img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/EnvView.PNG" width="300"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/SocView.PNG" width="300"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/govView.PNG" width="300"> <br>
+Educational informations to boost user's knwoledge and awareness on ESG.
+  <br>
+  <br>
+  <br>
+  <br>
+  <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/ESGreport.PNG" width="600"><br>
+  Review and recommendations based on user's portfolio.
+</p>
+
