@@ -70,11 +70,10 @@ Below are some scenarios when the E, S and G score changes.
 
 ## Good vs Bad Environmental (E) score
 
-
 <table align="center">
   <tr align="center">
    <p align="center"> 
-    Trees 
+    Oxygen (Trees) 
     </p>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEmoreTrees.gif" width="400" height="200"/><br> More trees will appear as the E value increases.</td>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadElesstrees.gif" width="400" height="200"/><br> More trees will be chopped down as the E value decreases.</td>
@@ -85,7 +84,7 @@ Below are some scenarios when the E, S and G score changes.
 <table align="center">
   <tr align="center">
     <p align="center"> 
-    Windmills
+    Energy (Windmills)
     </p>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEwindmill.gif" width="400" height="200"/><br> More windmills will be planted as the E value increases.</td>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadEwindmill.gif" width="400" height="200"/><br>  Windmills will start to get damaged as the E value decreases.</td>
@@ -96,10 +95,73 @@ Below are some scenarios when the E, S and G score changes.
 <table align="center">
   <tr align="center">
     <p align="center"> 
-    Water
+    Air pollution (Factories)
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodElesserfactories.gif" width="400" height="200"/><br> Air will not be as polluted as E value increases<br>(Lesser factories built)</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadEfactories.gif" width="400" height="200"/><br> Air will start to get polluted as E value decreases<br>(More factories built)</td>
+  </tr>
+</table>
+<br>
+
+<table align="center">
+  <tr align="center">
+    <p align="center"> 
+    Water pollution (Rivers)
     </p>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/goodWater.PNG" width="400" height="200"/><br> Rivers will be cleaner when the E score is good.</td>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/notSoGoodWater.PNG" width="400" height="200"/><br> Rivers will start to turn green as the E score decreases.</td>
     <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/badWater.PNG" width="400" height="200"/><br> Yucks! </td>
   </tr>
 </table>
+<br><br><br>
+
+## Good vs Bad Social (S) score
+
+<table align="center">
+  <tr align="center">
+   <p align="center"> 
+    Standard of Living (Houses) 
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodSmoreHouse.PNG" width="400" height="200"/><br> More occupied houses will appear as the S score increases. <br> This signifies that more people wants to live in the city.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadSlesserHouses.PNG" width="400" height="200"/><br> Houses will start to be vacant as the S score decreases.</td>
+  </tr>
+</table>
+<br>
+
+<table align="center">
+  <tr align="center">
+    <p align="center"> 
+    Happiness (People)
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodSthrivingeconomy.gif" width="400" height="200"/><br> Happier citizens will roam the city as the S score increases.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadSfustratedpeople.gif" width="400" height="200"/><br> Citizens start turning frustrated as the S score decreases. </td>
+  </tr>
+</table>
+<br><br><br>
+
+## Good vs Bad Governance (G) score
+
+<table align="center">
+  <tr align="center">
+    <p align="center"> 
+    Thriving economy (Companies)
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodSmorebuildings.PNG" width="400" height="200"/><br> More companies will move in as the G score increases.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/badSlesserBuildings.PNG" width="400" height="200"/><br> Demand for building plots will drop as the G score decreases. </td>
+  </tr>
+</table>
+<br><br><br>
+
+# Overview
+<p align="center">
+  <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/OverallGood.gif" width="600"> <br>
+  How a city with good ESG score looks.
+</p>
+<br><br>
+<p align="center">
+  <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/OverallBad.gif" width="600"> <br>
+  And in every seed of good, there is always a piece of bad. 
+</p>
+
+## Footnotes
+What we are trying to achieve by building **City of Life** is to allow E,S and G to be more understandable, digestible and useable for the average investors, and more so for the new investors who have never heard of ESG investing. <br><br>
