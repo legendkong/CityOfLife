@@ -6,7 +6,7 @@ A gamification solution for ESG stock portfolio ratings. <br> <br>
 
 ## Use Cases
 Users are able to port over their existing stock portfolio from their brokerage into City of Life. The user's investments will be uniquely digitalized within the application.
-<br>
+<br><br>
 When the user purchases shares of a company, the app will automatically convert the ESG ratings of said company into varying conditions in the city. Events (e.g air pollution) might also occur from time to time throughout the city, depending on the nature and ESG sub-ratings of the company.
 
 ## Summary
