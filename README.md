@@ -69,5 +69,37 @@ The state of the city changes accordingly and proportionately to the E, S and G 
 Below are some scenarios when the E, S and G score changes.
 
 ## Good vs Bad Environmental (E) score
-<img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEmoreTrees.gif" width="400" height="200"> 
-<img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadElesstrees.gif" width="400" height="200">
+
+
+<table align="center">
+  <tr align="center">
+   <p align="center"> 
+    Trees 
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEmoreTrees.gif" width="400" height="200"/><br> More trees will appear as the E value increases.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadElesstrees.gif" width="400" height="200"/><br> More trees will be chopped down as the E value decreases.</td>
+  </tr>
+</table>
+<br>
+
+<table align="center">
+  <tr align="center">
+    <p align="center"> 
+    Windmills
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEwindmill.gif" width="400" height="200"/><br> More windmills will be planted as the E value increases.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadEwindmill.gif" width="400" height="200"/><br>  Windmills will start to get damaged as the E value decreases.</td>
+  </tr>
+</table>
+<br>
+
+<table align="center">
+  <tr align="center">
+    <p align="center"> 
+    Water
+    </p>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/goodWater.PNG" width="400" height="200"/><br> Rivers will be cleaner when the E score is good.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/notSoGoodWater.PNG" width="400" height="200"/><br> Rivers will start to turn green as the E score decreases.</td>
+    <td valign="center"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/badWater.PNG" width="400" height="200"/><br> Yucks! </td>
+  </tr>
+</table>
