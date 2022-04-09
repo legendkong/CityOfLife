@@ -37,7 +37,7 @@ A stock portfolio app that allows user to buy and sell stocks, then to retrieve 
 ## Features
 <p align="center">
 <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/EnvView.PNG" width="300"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/SocView.PNG" width="300"><img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/govView.PNG" width="300"> <br>
-Educational informations to boost user's knwoledge and awareness on ESG.
+Educational informations to boost user's knowledge and awareness on ESG.
   <br>
   <br>
   <br>
