@@ -63,9 +63,10 @@ Weighted <NIO> E, S, G scores = (400*17%, 300*17%, 350*17%) ---> 68, 51, 59.5
 Overall E, S, G scores** = (415+68, 207.5+51, 249+59.5) ---> 483, 258.5, 308.5
 ```
 After the overall E, S and G scores are updated, the data will be saved, downloaded and fed into our back-end application where it will read the values and modify the state of the city.
+<br><br>
 
 # Back-End
-The state of the city changes accordingly and proportionately to the E, S and G scores beign fed from the front-end to the back-end. <br>
+The state of the city changes accordingly and proportionately to the E, S and G scores being fed from the front-end to the back-end. <br>
 Below are some scenarios when the E, S and G score changes.
 
 ## Good vs Bad Environmental (E) score
