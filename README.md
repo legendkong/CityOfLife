@@ -1,11 +1,13 @@
 # City of Life:family_man_woman_girl_boy::cityscape::city_sunset:
-A gamification solution for ESG stock portfolio ratings. <br>
+<p align="center">
+A gamification solution for ESG stock portfolio ratings. <br> <br>
 <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/OverallGood.gif" width="600"> <br>
+</p>
 
 ## Use Cases
 Users are able to port over their existing stock portfolio from their brokerage into City of Life. The user's investments will be uniquely digitalized within the application.
 <br>
-When the user pruchases shares of a company, the app will automatically convert the ESG ratings of said company into varying conditions in the city. Events (e.g air pollution) might also occur from time to time throughout the city, depending on the nature and ESG sub-ratings of the company.
+When the user purchases shares of a company, the app will automatically convert the ESG ratings of said company into varying conditions in the city. Events (e.g air pollution) might also occur from time to time throughout the city, depending on the nature and ESG sub-ratings of the company.
 
 ## Summary
 Data visualization of the ESG ratings of your portfolio through a simulation. ESG ratings of your portfolio, instead of being represented through mere numers and graphs, are represented through a real-world city simulation.
