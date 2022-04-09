@@ -43,6 +43,31 @@ Educational informations to boost user's knwoledge and awareness on ESG.
   <br>
   <br>
   <img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/ESGreport.PNG" width="600"><br>
-  Review and recommendations based on user's portfolio.
+  Review and recommendations based on user portfolio's overall ESG scores.
 </p>
+<br>
 
+# Connecting the Front-End to Back-End
+Whenever the user makes changes to his portfolio - i.e., to buy or sell stocks, the overall E, S and G scores will change according to the portfolio allocation and the E, S and G scores of the individual stock(s) he/she owns. <br>
+
+For example, if user owns _**1 share of TSLA ($1000)**_ and _**10 shares of NIO ($20 x 10 = $200)**_,
+```
+Total portfolio allocation = 83% TSLA, 17% NIO (Total sum $1200) 
+
+<TSLA> E, S, G scores = 500, 250, 300 
+<NIO> E, S, G scores = 400, 300, 350 
+
+Weighted <TSLA> E, S, G scores = (500*83%, 250*83%, 300*83%) ---> 415, 207.5, 249
+Weighted <NIO> E, S, G scores = (400*17%, 300*17%, 350*17%) ---> 68, 51, 59.5 
+
+Overall E, S, G scores** = (415+68, 207.5+51, 249+59.5) ---> 483, 258.5, 308.5
+```
+After the overall E, S and G scores are updated, the data will be saved, downloaded and fed into our back-end application where it will read the values and modify the state of the city.
+
+# Back-End
+The state of the city changes accordingly and proportionately to the E, S and G scores beign fed from the front-end to the back-end. <br>
+Below are some scenarios when the E, S and G score changes.
+
+## Good vs Bad Environmental (E) score
+<img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/GoodEmoreTrees.gif" width="400" height="200"> 
+<img src="https://github.com/legendkong/CityOfLife/blob/master/CoLmarkdown/BadElesstrees.gif" width="400" height="200">
