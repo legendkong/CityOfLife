@@ -10,7 +10,7 @@ Users are able to port over their existing stock portfolio from their brokerage 
 When the user purchases shares of a company, the app will automatically convert the ESG ratings of said company into varying conditions in the city. Events (e.g air pollution) might also occur from time to time throughout the city, depending on the nature and ESG sub-ratings of the company.
 
 ## Summary
-Data visualization of the ESG ratings of your portfolio through a simulation. ESG ratings of your portfolio, instead of being represented through mere numers and graphs, are represented through a real-world city simulation.
+Data visualization of the ESG ratings of your portfolio through a simulation. ESG ratings of your portfolio, instead of being represented through mere numbers and graphs, are represented through a real-world city simulation.
 
 ## Application code
 ***Front-End*** <br>
